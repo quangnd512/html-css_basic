@@ -67,6 +67,8 @@ article img {
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.3);
+    display: none; /* Ẩn đi */
+    animation: fadeIn linear 0.2s;
 }
 
 /* nav mobile  */
@@ -78,6 +80,27 @@ article img {
     width: 320px;
     max-width: 100%;
     background-color: #fff;
+    transform: translateX(-100%); /* Ẩn element ra khỏi website theo chiều ngang để ta có thể làm 
+                                    hiệu ứng element đi từ ngoài vào */
+    transition: transform linear 0.2s;
+}
+.nav__mobile-list{
+    margin-top: 24px;
+}
+.nav__mobile-times{
+    position: absolute; /*Chạy theo position: fixed ở trên*/
+    top: 1rem;
+    right: 1rem;
+    width: 28px;
+    height: 28px;
+    color: rgb(0, 0, 0);
+}
+
+.input__checkbox:checked ~ .nav__overlay{
+    display: block;
+}
+.input__checkbox:checked ~ .nav__mobile{
+    transform: translateX(0%);
 }
 /* end nav mobile  */
 
@@ -87,5 +110,14 @@ article img {
     }
     .nav__pc{
         display: none;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
