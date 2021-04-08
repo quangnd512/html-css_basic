@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+*::before{
+    box-sizing: border-box;
+}
+/* Progress */
+.progress__bar{
+    position: relative;
+    max-width: 500px;
+    margin: 50px auto 0;
+    height: 3em;
+    background: #111;
+    border-radius: 1.5em;
+    color: #fff;
+}
+.progress__bar::before{
+    content: attr(data-label);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    width: calc(var(--width, 0) * 1%);
+    min-width: 2rem;
+    max-width: calc(100% - 1em);
+    background: cornflowerblue;
+    border-radius: 1em;
+    padding-left: 1em;
+}
+/* Progress */
+
+/* Spinners */
+.spinner{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 50px auto 0;
+}
+.spinner div{
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 10px solid transparent;
+    border-top-color: #ad60f5;
+    border-radius: 50%;
+    animation: spinnerOne 1.2s linear infinite;
+}
+.spinner div:nth-child(2){
+    border: 10px solid transparent;
+    border-bottom-color: #ad60f5;
+    animation: spinnerTwo 1.2s linear infinite;
+}
+
+@keyframes spinnerOne{
+    0% {transform: rotate(0deg); border-width: 10px;}
+    50% {transform: rotate(180deg); border-width: 1px;}
+    100% {transform: rotate(360deg); border-width: 10px;}
+}
+@keyframes spinnerTwo{
+    0% {transform: rotate(0deg); border-width: 1px;}
+    50% {transform: rotate(180deg); border-width: 10px;}
+    100% {transform: rotate(360deg); border-width: 1px;}
+}
+/* Spinners */
+
+/* Toasts */
+.toast__wapper{
+    max-width: 500px;
+    margin: 200px auto 0;
+}
+.toast__button{
+    padding: 8px;
+    border: 2px solid #e3f5c4;
+    border-radius: 5px;
+}
+.toast{
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.toast__content{
+    width: 70%;
+    display: flex;
+    background: #e3f5c4;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+    font-size: 25px;
+    position: relative;
+    border-radius: 15px;
+    border-left: 2px solid #ff00b3;
+    border-bottom: 2px solid #ff00b3;
+}
+.toast__content .icon{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    background-color: #ff00b3;
+    border-radius: 100%;
+}
+.toast__content .details{
+    margin: 0 auto;
+}
+.toast__content .icon--close{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    background-color: #ffffff;
+    border-radius: 100%;
+}
+/* Toasts */
+
+/* Tooltip */
+.wapper{
+    background: #e79c9c;
+}
+.tooltip__wapper{
+    max-width: 1000px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tooltip__wapper .icon{
+    margin: 0 auto;
+    position: relative;
+}
+.tooltip__wapper .icon .tooltip{
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 3px;
+    left: -10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: none;
+}
+.tooltip__wapper .icon .tooltip::before{
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+.tooltip__wapper .icon:hover .tooltip{
+    display: block;
+}
+.tooltip__wapper a{
+    text-decoration: none;
+    color: #333;
+    position: absolute;
+    top: 50px;
+}
+.tooltip__wapper span{
+    width: 60px;
+    height: 60px;
+    background-color:#fff;
+    display: block;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+}
+.tooltip__wapper span .fa-facebook-f{
+    color: #1877F2;
+}
+.tooltip__wapper span .fa-youtube{
+    color: #FF0000;
+}
+.tooltip__wapper span .fa-skype{
+    color: #0C65A4;
+}
+.tooltip__wapper .facebook:hover .tooltip, 
+.tooltip__wapper .facebook:hover .tooltip::before,
+.tooltip__wapper .facebook:hover span{
+    background-color: #1877F2;
+    color: #fff;
+}
+.tooltip__wapper .facebook:hover span .fa-facebook-f{
+    color: #fff;
+}
+.tooltip__wapper .youtube:hover .tooltip, 
+.tooltip__wapper .youtube:hover .tooltip::before,
+.tooltip__wapper .youtube:hover span{
+    background-color: #FF0000;
+    color: #fff;
+}
+.tooltip__wapper .youtube:hover span .fa-youtube{
+    color: #fff;
+}
+.tooltip__wapper .skype:hover .tooltip, 
+.tooltip__wapper .skype:hover .tooltip::before,
+.tooltip__wapper .skype:hover span{
+    background-color: #0C65A4;
+    color: #fff;
+}
+.tooltip__wapper .skype:hover span .fa-skype{
+    color: #fff;
+}
+/* Tooltip */
+
+/* Scrollspy */
+.section__scro{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+    font-weight: bold;
+}
+.section__scro:nth-child(even){
+    background: #efefef;
+}
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000;
+    text-align: center;
+    z-index: 1;
+}
+nav a{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.6em;
+    display: inline-block;
+}
+nav a:hover,
+.section__scro#one:hover ~ nav a[href="#one"],
+.section__scro#two:hover ~ nav a[href="#two"],
+.section__scro#three:hover ~ nav a[href="#three"],
+.section__scro#four:hover ~ nav a[href="#four"],
+.section__scro#five:hover ~ nav a[href="#five"]{
+    background: #fff;
+    color: #000;
+}
+/* Scrollspy */

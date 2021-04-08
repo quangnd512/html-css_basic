@@ -1,0 +1,171 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Dropdowns */
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+}
+.dropdown{
+    position: relative;
+    margin: 20px 0;
+    display: inline-block;
+}
+.select__wapper{
+    padding: 8px 20px;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.dropdown::after{
+    content: "\f078";
+   	font-family: "Font Awesome 5 Free";
+   	font-weight:600;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+}
+.select__wapper:focus,
+.select__wapper:hover{
+    outline: none;
+    border: 1px solid #bbb;
+
+}
+.select__wapper option{
+    background-color: #fff;
+}
+
+/* Dropdowns */
+
+/* Iframe */
+.iframe__wapper{
+    max-width: 800px;
+    margin: 10px auto;
+}
+.iframe__wapper iframe{
+    width: 100%;
+    border: 5px solid #333;
+}
+/* Iframe */
+
+/* Star Rating */
+.rating__wapper{
+    background: #262626;
+}
+.rating{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    display: flex;
+}
+.rating input{
+    display: none;
+}
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    margin-right: 8px;
+}
+.rating label::before{
+    content: "\f005";
+   	font-family: "Font Awesome 5 Free";
+   	font-weight: 600;
+    position: relative;
+    display: block;
+    font-size: 50px;
+    color: #101010;
+}
+
+/* Màu của ngôi sao đè lên ngôi sao  */
+.rating label::after{
+    content: "\f005";
+   	font-family: "Font Awesome 5 Free";
+   	font-weight: 600;
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 50px;
+    color: #1f9cff;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+.rating label:hover::after,
+.rating label:hover ~ label::after,
+.rating input:checked ~ label::after{
+    opacity: 1;
+}
+/* Star Rating */
+
+/* Lists Style */
+.list__wapper{
+    background: #ff3772;
+}
+ul{
+    position: relative;
+    max-width: 450px;
+    margin: 100px auto 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .1);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+ul li {
+    display: flex;
+    background: rgba(255, 255, 255, .1);
+    padding: 10px 20px;
+    color: #fff;
+    margin: 5px 0;
+    transition: .5s;
+}
+ul li:nth-child(1){
+    background: rgba(255, 255, 255, .6);
+}
+ul li:nth-child(2){
+    background: rgba(255, 255, 255, .4);
+}
+ul li:nth-child(3){
+    background: rgba(255, 255, 255, .2);
+}
+ul li span:nth-child(1){
+    max-width: 30px;
+    width: 100%;
+}
+ul li span:nth-child(2){
+    max-width: 200px;
+    width: 100%;
+}
+ul li span:nth-child(3){
+    max-width: 100px;
+    width: 100%;
+    text-align: right;
+}
+ul li span:nth-child(4){
+    max-width: 70px;
+    width: 100%;
+    text-align: right;
+}
+ul li:hover{
+    transform: scale(1.06);
+    background: #ff3772;
+}
+/* Lists Style */

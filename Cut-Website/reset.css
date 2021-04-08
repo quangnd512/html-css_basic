@@ -3,20 +3,11 @@
    License: none (public domain)
 */
 
-/* color */
-:root{
-    --while-color: #ffffff;
-    --section-color: #f6f3e4;
-    --content-color: #F9F9F9;
-    --footer-color: #FBEFE2;
-    --buttom-color: #ddac55;
-    --text-color: #000000;
-}
-/* color */
-
-.gird{
-    max-width: 1160px;
-    margin: 0 auto;
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
 }
 
 html, body, div, span, applet, object, iframe,

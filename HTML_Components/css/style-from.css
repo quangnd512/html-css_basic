@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Form */
+.from__wapper{
+    max-width: 500px;
+    margin: 0 auto;
+}
+.from__container{
+    max-width: 360px;
+    margin-bottom: 15px;
+}
+/* Lấy attribute làm content cho lớp giả after  */
+.from__container[data-error]::after{
+    content: attr(data-error);
+    display: block;
+    color: #c92432;
+    margin: 10px 0;
+    font-size: 0.85em;
+}
+.from__container[data-error] .input{
+    border-color: #c92432;
+    color: #c92432;
+    background: #fffafa;
+}
+.input{
+    width: 100%;
+    padding: 12px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.input__submit{
+    padding: 8px;
+    width: 50%;
+    margin: 0 auto;
+}
+/* From */
